@@ -1,10 +1,10 @@
 [package]
 name = "battery"
-version = "0.7.8" # remember to update html_root_url
-authors = ["svartalf <self@svartalf.info>"]
+version = "0.7.9" # remember to update html_root_url
+authors = ["svartalf <self@svartalf.info>", "trollLemon  <?>", "calacuda <eowest@gmail.com>"]
 edition = "2024"
 description = "Cross-platform information about the notebook batteries"
-repository = "https://github.com/svartalf/rust-battery"
+repository = "https://github.com/calacuda/rust-battery"
 readme = "README.md"
 categories = ["os"]
 keywords = ["battery", "linux", "macos", "windows", "freebsd"]
