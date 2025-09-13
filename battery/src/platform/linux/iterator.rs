@@ -1,14 +1,14 @@
 use std::fmt;
 use std::fs::{self, ReadDir};
-use std::rc::Rc;
+use std::sync::Arc;
 
 use super::{SysFsDevice, SysFsManager};
-use crate::platform::traits::*;
 use crate::Result;
+use crate::platform::traits::*;
 
 pub struct SysFsIterator {
     #[allow(dead_code)]
-    manager: Rc<SysFsManager>,
+    manager: Arc<SysFsManager>,
     entries: ReadDir,
 }
 
@@ -16,7 +16,7 @@ impl BatteryIterator for SysFsIterator {
     type Manager = SysFsManager;
     type Device = SysFsDevice;
 
-    fn new(manager: Rc<Self::Manager>) -> Result<Self> {
+    fn new(manager: Arc<Self::Manager>) -> Result<Self> {
         let entries = fs::read_dir(manager.path())?;
 
         Ok(SysFsIterator {
